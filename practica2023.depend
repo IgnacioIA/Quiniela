@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1681421116 source:d:\codeprojectos\codeblock\practica2023\persona.c
+	"Persona.h"
+	<stdio.h>
+	<stdlib.h>
+
+1680566075 d:\codeprojectos\codeblock\practica2023\persona.h
+	"Carton.h"
+	"Lista.h"
+
+1681235660 source:d:\codeprojectos\codeblock\practica2023\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+	"Carton.h"
+	"Interfaz.h"
+
+1681602322 source:d:\codeprojectos\codeblock\practica2023\carton.c
+	"Carton.h"
+	"Persona.h"
+	<stdlib.h>
+	<string.h>
+
+1681306868 source:d:\codeprojectos\codeblock\practica2023\interfaz.c
+	"Persona.h"
+	"Interfaz.h"
+	"Carton.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1681306752 d:\codeprojectos\codeblock\practica2023\interfaz.h
+	"Lista.h"
+
+1680118957 source:d:\codeprojectos\codeblock\practica2023\lista.c
+	"lista.h"
+	<stdlib.h>
+	<string.h>
+
+1680118928 d:\codeprojectos\codeblock\practica2023\lista.h
+
+1681420522 d:\codeprojectos\codeblock\practica2023\carton.h
+	"Persona.h"
+
