@@ -1,29 +1,28 @@
 #include "Carton.h"
+#include "Persona.h"
 #include <stdlib.h>
 #include <string.h>
 
 struct cartonEstructura{
 int vec[8];
-int dni;
+Persona per;
 };
 
-Carton crearCarton(int vec[], int dni){
+Carton crearCarton(int vec[], Persona per){
 
     Carton car = malloc(sizeof(struct cartonEstructura));
 
-
-    car->dni = dni;
+    car->per=per;
     for(int i=0; i<8;i++){
     car->vec[i] = vec[i];
 }
 return car;
 };
 
-void mostrarCarton(Carton car,Lista lisPersonas){
+void mostrarCarton(Carton car){
 
-Persona p= *( (Persona*)obtenerPrimerDato(lisPersonas));
-mostrarPersona(p);
-
+Persona per= *((Persona*)traerPersona(car));
+mostrarPersona(per);
 printf("\n********************** \n");
 printf("Su carton: \n");
 
@@ -68,4 +67,6 @@ void comparer(Carton cart, int * vec){
 
 }
 
-
+void * traerPersona(Carton car){
+return car->per;
+}

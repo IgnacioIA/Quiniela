@@ -47,16 +47,16 @@ menu(Lista lisPersonas,Lista lisCartones){
         switch ( opcion )
         {
             case 1:
-                    comprarCarton(p,lisCartones);
+                    comprarCarton(lisPersonas,lisCartones);
                     break;
 
             case 2:
-                    mostrarCartonesComprados(lisCartones);
+                    mostrarCartonesComprados(lisCartones,lisPersonas);
                     break;
 
 
             case 3:
-                    compararCartones(lisCartones);
+                    compararCartones(lisCartones,lisPersonas);
                     break;
          }
 
@@ -66,9 +66,10 @@ menu(Lista lisPersonas,Lista lisCartones){
 }
 
 
-void comprarCarton(Persona p,Lista lisCartones){
+void comprarCarton(Lista lisPersonas,Lista lisCartones){
     int numero=0;
     int nCarton[8];
+    Persona p= *( (Persona*)obtenerPrimerDato(lisPersonas));
     system("CLS");
     printf("***************Quiniela***************\n");
     printf("Elija los 8 numeros de su carton \n");
@@ -78,7 +79,7 @@ void comprarCarton(Persona p,Lista lisCartones){
         nCarton[i]=numero;
     }
 
-    Carton cart= crearCarton(nCarton,p);
+    Carton cart= crearCarton(nCarton,getDni(p));
     insertarInicio(lisCartones,&cart);
 
 
@@ -86,25 +87,31 @@ void comprarCarton(Persona p,Lista lisCartones){
     system("pause");
 };
 
-void mostrarCartonesComprados(Lista lisCartones){
+void mostrarCartonesComprados(Lista lisCartones,Lista lisPersonas){
     //Variables
 
     //Logica
     system("CLS");
     printf("***************Quiniela***************\n");
 
+      if(obtenerTamanio(lisCartones)==0){
+        printf("Primero debe comprar un carton \n\n");
+        system("pause");
+        return;
+
+    }
 
     for(int i=0;i<obtenerTamanio(lisCartones);i++){
 
         Carton cart= *( (Carton*)obtenerDato(lisCartones,i));
-        mostrarCarton(cart);
+        mostrarCarton(cart,lisPersonas);
     }
 
 printf("\n");
 system("pause");
 };
 
-void compararCartones(Lista lisCartones){
+void compararCartones(Lista lisCartones,Lista lisPersonas){
     //Variables
     int randon=0;
     int vect[8];
@@ -114,7 +121,7 @@ void compararCartones(Lista lisCartones){
     printf("***************Quiniela***************\n");
 
     if(obtenerTamanio(lisCartones)==0){
-        printf("Primero debe comprar una carton \n\n");
+        printf("Primero debe comprar un carton \n\n");
         system("pause");
         return;
 
@@ -132,7 +139,7 @@ void compararCartones(Lista lisCartones){
     for(int i=0;i<obtenerTamanio(lisCartones);i++){
 
         Carton cart= *( (Carton*)obtenerDato(lisCartones,i));
-        mostrarCarton(cart);
+        mostrarCarton(cart,lisPersonas);
         comparer(cart,vect);
 
     }

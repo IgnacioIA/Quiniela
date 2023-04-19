@@ -4,9 +4,9 @@
 
 void bienvenida(Lista lisPersonas);
 void menu(Lista lisPersonas,Lista lisCartones);
-void comprarCarton(Persona p,Lista lisCartones);
-void mostrarCartonesComprados(Lista lisCartones);
-void compararCartones(Lista lisCartones);
+void comprarCarton(Lista lisPersonas,Lista lisCartones);
+void mostrarCartonesComprados(Lista lisCartones,Lista lisPersonas);
+void compararCartones(Lista lisCartones,Lista lisPersonas);
 
 
 #endif // INTERFAZ_H_INCLUDED

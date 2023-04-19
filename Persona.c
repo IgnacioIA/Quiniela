@@ -28,4 +28,8 @@ void mostrarPersona(Persona p){
 
 };
 
+int getDni(Persona p){
+    return p->DNI;
+}
+
 

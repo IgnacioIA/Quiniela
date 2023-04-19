@@ -12,7 +12,7 @@ Persona crearPersona(char  n[20], int p);
 
 void mostrarPersona(Persona p);
 
-
+int getDni(Persona p);
 
 
 #endif // PERSONA_H_INCLUDED
